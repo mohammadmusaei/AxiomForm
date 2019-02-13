@@ -43,7 +43,9 @@ import { FormGroup, AbstractControl, ValidatorFn, AbstractControlOptions, AsyncV
 //   };
 // }
 
- 
+export interface NgForm{
+  ngForms : { [key:string] : FormGroup };
+}
 export interface ngFormCollectionItem {
   name: string,
   form: FormGroup;
@@ -57,13 +59,12 @@ export interface ngFormDecoratorConfig {
 }
 function Form(forms: ngFormDecoratorConfig) {
   return (constructor: Function) => {
-    constructor.prototype.formCollection = [];
+    constructor.prototype.ngForms = {};
     for (const form in forms) {
       if (forms.hasOwnProperty(form)) {
         const formConfig = forms[form];
         const group = new FormBuilder().group(formConfig);
-        constructor.prototype[form] = group;
-        constructor.prototype.formCollection.push({ name: form, form: group });
+        constructor.prototype.ngForms[form] = group;
       }
     }
   }
@@ -76,7 +77,7 @@ function Form(forms: ngFormDecoratorConfig) {
   },
   work: {
     phone: [''],
-    email: ['']
+    mail: ['a@s.com']
   }
 })
 @Component({
@@ -84,10 +85,8 @@ function Form(forms: ngFormDecoratorConfig) {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements NgForm {
 
-  constructor() {
-
-  }
-
+  ngForms: { [key: string]: FormGroup; };
+  
 }

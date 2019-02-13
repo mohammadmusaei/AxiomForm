@@ -1,31 +1,31 @@
-<form [formGroup]="form">
+<form [formGroup]="ngForms.form" [ngForm]="ngForms.form">
 
   <label>
     First Name:
-    <input type="text" formControlName="firstName" name="firstName">
+    <input ngFormControl type="text" formControlName="firstName">
   </label>
 
   <label>
     Last Name:
-    <input type="text" formControlName="lastName" name="lastName">
+    <input ngFormControl type="text" formControlName="lastName">
   </label>
 
 </form>
 
-<form [formGroup]="work">
+<form [formGroup]="ngForms.work" [ngForm]="ngForms.work">
 
   <label>
     Phone:
-<input type="text" formControlName="phone" name="phone">
+    <input ngFormControl type="text" formControlName="phone" name="phone">
   </label>
 
   <label>
     Email:
-<input type="text" formControlName="mail" name="mail">
+    <input ngFormControl type="text" formControlName="mail" name="mail">
   </label>
 
 </form>
 
 
-{{ form.value | json }}
-{{ work.value | json }}
+{{ ngForms.form.value | json }}
+{{ ngForms.work.value | json }}
