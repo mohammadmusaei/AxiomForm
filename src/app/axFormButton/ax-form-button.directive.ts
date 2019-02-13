@@ -16,9 +16,6 @@ export class AxFormButtonDirective {
   constructor(private _formService: AxFormService) {}
 
   @HostListener('click') onClick() {
-    if(this._formService.config.axAutoDisableSubmit && !this._formService.form.valid){
-      return;
-    }
     this._formService.submit.next(this.type === 'submit');
     if(this.type === 'reset'){
       setTimeout(() => {

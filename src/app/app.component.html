@@ -49,7 +49,7 @@
                   </label>
                 </div>
               </div>
-              <button type="button" axFormButton="submit" click="save()" class="btn btn-sm btn-primary">Sign in</button>
+              <button type="button" axFormButton="submit" (click)="save()" class="btn btn-sm btn-primary">Sign in</button>
               <button axFormButton="reset" type="button" class="btn btn-sm btn-danger ml-2"
                 (click)="axForms.form.reset()">Clear</button>
         </div>
@@ -57,6 +57,7 @@
     </div>
 
     <div class="col-md-3 pt-5">
+      <h6 class="border-bottom border-secondary pb-3 mb-3">Form Value</h6>
       <pre>{{ axForms.form.value | json }}</pre>
     </div>
 
