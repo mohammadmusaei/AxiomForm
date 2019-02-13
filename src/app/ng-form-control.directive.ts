@@ -14,7 +14,7 @@ export class NgFormControlDirective implements OnInit {
     this.controlName = this._element.nativeElement.getAttribute('formControlName');
     this._formService.form.controls[this.controlName].valueChanges.subscribe(s => {
       console.log(s);
-    }) 
+    })  
   }
 
 }
