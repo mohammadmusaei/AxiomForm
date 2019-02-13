@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "axiom-form": [
+        "dist/axiom-form"
+      ],
+      "axiom-form/*": [
+        "dist/axiom-form/*"
+      ]
+    }
   }
 }

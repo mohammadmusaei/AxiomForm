@@ -134,6 +134,41 @@
           }
         }
       }
+    },
+    "axiom-form": {
+      "root": "projects/axiom-form",
+      "sourceRoot": "projects/axiom-form/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/axiom-form/tsconfig.lib.json",
+            "project": "projects/axiom-form/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/axiom-form/src/test.ts",
+            "tsConfig": "projects/axiom-form/tsconfig.spec.json",
+            "karmaConfig": "projects/axiom-form/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/axiom-form/tsconfig.lib.json",
+              "projects/axiom-form/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "decorators"

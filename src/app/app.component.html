@@ -1,31 +1,65 @@
-<form [formGroup]="ngForms.form" [ngForm]="ngForms.form">
+<div class="container">
 
-  <label>
-    First Name:
-    <input ngFormControl type="text" formControlName="firstName">
-  </label>
+  <div class="row pt-5">
 
-  <label>
-    Last Name:
-    <input ngFormControl type="text" formControlName="lastName">
-  </label>
+    <div class="col-md-3 pt-5"></div>
+    <div class="col-md-6 pt-5">
+      <form class="card" [formGroup]="axForms.form" [ax-form]="axForms.form" [axAutoDisableSubmit]="true" [axShowErrors]="true">
+        <div class="card-body">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputEmail">Email</label>
+                  <input type="email" axFormControl formControlName="email" class="form-control form-control-sm"
+                    id="inputEmail" placeholder="Email" autocomplete="off">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputPassword">Password</label>
+                  <input type="password" axFormControl formControlName="password" class="form-control form-control-sm"
+                    id="inputPassword" placeholder="Password" autocomplete="off">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputAddress">Address</label>
+                <input type="text" axFormControl formControlName="address" class="form-control form-control-sm"
+                  id="inputAddress" placeholder="1234 Main St" autocomplete="off">
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputCity">City</label>
+                  <input type="text" axFormControl formControlName="city" class="form-control form-control-sm" id="inputCity"
+                    autocomplete="off">
+                </div>
+                <div class="form-group col-md-2">
+                  <label for="inputState">State</label>
+                  <select id="inputState" axFormControl formControlName="state" class="form-control form-control-sm"
+                    autocomplete="off">
+                  </select>
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="inputZip">Zip</label>
+                  <input type="text" axFormControl formControlName="zip" class="form-control form-control-sm" id="inputZip"
+                    autocomplete="off">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-check">
+                  <input class="form-check-input" axFormControl formControlName="agree" type="checkbox" id="gridCheck">
+                  <label class="form-check-label" for="gridCheck">
+                    I agree
+                  </label>
+                </div>
+              </div>
+              <button type="button" axFormButton="submit" click="save()" class="btn btn-sm btn-primary">Sign in</button>
+              <button axFormButton="reset" type="button" class="btn btn-sm btn-danger ml-2"
+                (click)="axForms.form.reset()">Clear</button>
+        </div>
+      </form>
+    </div>
 
-</form>
+    <div class="col-md-3 pt-5">
+      <pre>{{ axForms.form.value | json }}</pre>
+    </div>
 
-<form [formGroup]="ngForms.work" [ngForm]="ngForms.work">
+  </div>
 
-  <label>
-    Phone:
-    <input ngFormControl type="text" formControlName="phone" name="phone">
-  </label>
-
-  <label>
-    Email:
-    <input ngFormControl type="text" formControlName="mail" name="mail">
-  </label>
-
-</form>
-
-
-{{ ngForms.form.value | json }}
-{{ ngForms.work.value | json }}
+</div>

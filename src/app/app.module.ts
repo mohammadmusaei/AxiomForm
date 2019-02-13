@@ -5,15 +5,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { NgFormControlDirective } from './ng-form-control.directive';
 import { CommonModule } from '@angular/common';
-import { NgFormDirective } from './ng-form.directive';
+import { AxFormComponent } from './ax-form/ax-form.component';
+import { AxFormControlDirective } from './axFormControl/ax-form-control.directive';
+import { AxFormButtonDirective } from './axFormButton/ax-form-button.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NgFormControlDirective,
-    NgFormDirective
+    AxFormComponent,
+    AxFormControlDirective,
+    AxFormButtonDirective
   ],
   imports: [
     CommonModule,
