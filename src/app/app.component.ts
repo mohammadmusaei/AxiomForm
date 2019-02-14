@@ -23,7 +23,9 @@ import { AxForm } from './ax-form/ax-form.component';
 })
 export class AppComponent implements AxForm {
 
-  axForms: { [key: string]: FormGroup; };
+  public axForms: { [key: string]: FormGroup; };
+  public autoDisableSubmit : boolean = true;
+  public showErrors : boolean = true;
 
   public save(): void {
     console.log(this.axForms.form.value);

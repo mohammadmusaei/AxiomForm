@@ -57,26 +57,38 @@ export interface AxFormConfiguration {
 export class AxFormComponent implements OnInit {
 
   @Input('ax-form') form: FormGroup;
-  @Input() axAutoDisableSubmit: boolean = true;
-  @Input() axShowErrors: boolean = true;
+  @Input() set axAutoDisableSubmit(axAutoDisableSubmit: boolean){
+    this._axAutoDisableSubmit = axAutoDisableSubmit;
+    this.setConfig();
+  }
+  @Input() set axShowErrors(axShowErrors: boolean){
+    this._axShowErrors = axShowErrors;
+    this.setConfig();
+  }
   @ContentChildren(AxFormControlDirective) viewChildren: QueryList<AxFormControlDirective>;
 
   public submitted: boolean = false;
   public errors: string[] = [];
 
+  private _axAutoDisableSubmit: boolean;
+  private _axShowErrors: boolean;
+
   constructor(private _formService: AxFormService) { }
 
-  ngOnInit(): void {
-    this._formService.setConfig({
-      axAutoDisableSubmit : this.axAutoDisableSubmit,
-      axShowErrors : this.axShowErrors
-    });
+  public ngOnInit(): void {
     this._formService.form = this.form;
     this._formService.submit.subscribe(submitted => {
       this.submitted = submitted;
     });
     this._formService.errors.subscribe(errors=>{
       this.errors = errors;
+    });
+  }
+
+  private setConfig() : void{
+    this._formService.setConfig({
+      axAutoDisableSubmit : this._axAutoDisableSubmit,
+      axShowErrors : this._axShowErrors
     });
   }
 
