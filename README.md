@@ -41,7 +41,9 @@ import { AxiomFormModule } from 'axiom-form';
 
 ### Usage
 
-Use `[ax-form]` attribute component and assign a formGroup to it. For each input elements use `axFormControl` and for actiom buttons[Submit and Reset] use `axFormButton` and pass a string parameter to it as button type.
+1. Use `[ax-form]` attribute component and assign a formGroup to it. 
+2. For each input elements use `axFormControl`.
+3. For action buttons[Submit and Reset] use `axFormButton` and pass a string parameter to it as button type.
 
 ```html
 
