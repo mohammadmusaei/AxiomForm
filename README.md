@@ -6,7 +6,7 @@
 
 ### Stackblitz Source Demo
 
-[Usage Demo](https://stackblitz.com/edit/axiom-form)
+[Stackblitz Demo](https://stackblitz.com/edit/axiom-form)
 
 ### Installation
 
