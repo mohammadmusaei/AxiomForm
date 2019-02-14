@@ -67,9 +67,13 @@ import { AxiomFormModule } from 'axiom-form';
 ### @Input() Params
 
 | Name | Type | Usage |
-| ------ | ------ |
+| ------ | ------ | ------ |
 | axAutoDisableSubmit | boolean | auto disable submit button when form is invalid |
 | axShowErrors | boolean | show form errors as a list |
+
+
+
+
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.1.
