@@ -77,7 +77,7 @@ Also you can use Axiom custom form decorator `@AxForm` for every components you 
     ...
   },
   form2 : { ... },
-  form2 : { ... },
+  form3 : { ... },
   ...
 })
 
