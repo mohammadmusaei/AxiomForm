@@ -114,8 +114,6 @@ import { AxForm } from 'axiom-form'
 export class AppComponent implements AxForm {
 
   public axForms: { [key: string]: FormGroup; };
-  public autoDisableSubmit : boolean = true;
-  public showErrors : boolean = true;
 
   public save(): void {
     console.log(this.axForms.form.value);
