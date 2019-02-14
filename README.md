@@ -73,7 +73,7 @@ Here is an example of decorator usage.
 
 ```typescript
 
-import { AxForm } from './ax-form/ax-form.component';
+import { AxForm } from 'axiom-form'
 
 @AxForm({
   form: {
