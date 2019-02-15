@@ -27,7 +27,7 @@ import { AxiomFormModule } from 'axiom-form';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AxiomFormModule,
+    AxiomFormModule
   ], 
   declarations: [
     AppComponent
